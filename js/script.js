@@ -21,7 +21,7 @@ showDate();
 
 const text = document.querySelector('.greeting');
 
-function showGreeting(){
+function showGreeting() {
     getTimeOfDay();
     setTimeout(showGreeting, 1000);
 }
@@ -30,43 +30,87 @@ showGreeting();
 function getTimeOfDay() {
     const date = new Date();
     const hours = date.getHours();
+    let greetingText;
+    let timeOfDay;
 
     if (hours >= 5 && hours < 12) {
-        const timeOfDay = 'Morning';
-        const greetingText = `Good ${timeOfDay},`;
+        timeOfDay = 'Morning';
+        greetingText = `Good ${timeOfDay},`;
         text.textContent = greetingText;
     }
     if (hours >= 12 && hours < 18) {
-        const timeOfDay = 'Afternoon';
-        const greetingText = `Good ${timeOfDay},`;
+        timeOfDay = 'Afternoon';
+        greetingText = `Good ${timeOfDay},`;
         text.textContent = greetingText;
     }
     if (hours >= 18 && hours < 21) {
-        const timeOfDay = 'Evening';
-        const greetingText = `Good ${timeOfDay},`;
+        timeOfDay = 'Evening';
+        greetingText = `Good ${timeOfDay},`;
         text.textContent = greetingText;
     }
     if (hours >= 21 && hours < 5) {
-        const timeOfDay = 'Night';
-        const greetingText = `Good ${timeOfDay},`;
+        timeOfDay = 'Night';
+        greetingText = `Good ${timeOfDay},`;
         text.textContent = greetingText();
     }
+
+    return timeOfDay;
 }
 
 function setLocalStorage() {
     let name = document.querySelector('.name');
     localStorage.setItem('name', name.value);
-  }
+}
 
-  window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('beforeunload', setLocalStorage);
 
-  function getLocalStorage() {
+function getLocalStorage() {
     let name = document.querySelector('.name');
-    if(localStorage.getItem('name')) {
-      name.value = localStorage.getItem('name');
+    if (localStorage.getItem('name')) {
+        name.value = localStorage.getItem('name');
     }
-  }
-  window.addEventListener('load', getLocalStorage)
+}
+window.addEventListener('load', getLocalStorage)
+
+let randomNum = (Math.floor(Math.random() * 20) + 1);
+
+function setBg() {
+    let timeOfDay = getTimeOfDay().toLowerCase();
+    let bgNum = randomNum.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+    const body = document.body;
+    const img = new Image();
+    img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+    img.onload = () => { 
+    body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg')`};
+}
+setBg();
+
+const slideNext = document.querySelector('.slide-next.slider-icon');
+const slidePrev = document.querySelector('.slide-prev.slider-icon');
+
+function getSlideNext(){
+    if (randomNum === 20){
+        randomNum = 1;
+    }
+    else {
+        randomNum++;
+    }
+    setBg();
+}
+
+slideNext.addEventListener('click', getSlideNext);
+
+function getSlidePrev(){
+    if (randomNum === 1){
+        randomNum = 20;
+    }
+    else {
+        randomNum = randomNum-1;
+    }
+    setBg();
+}
+
+slidePrev.addEventListener('click', getSlidePrev);
 
 
 
