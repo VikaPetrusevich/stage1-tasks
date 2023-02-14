@@ -1,14 +1,51 @@
 [
     {
-      "text": "Пишите код так, как будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете",
-      "author": "Стив Макконнелл"
+      "text": "Beware of bugs in the above code; I have only proved it correct, not tried it",
+      "author": "Donald E. Knuth"
     },
     {
-      "text": "Сложность программы растет до тех пор, пока не превысит способности программиста",
-      "author": "Артур Блох. Законы Мэрфи"
+      "text": "If McDonalds were run like a software company, one out of every hundred Big Macs would give you food poisoning, and the response would be, ‘We’re sorry, here’s a coupon for two more.’",
+      "author": "Mark Minasi"
     },
-      {
-      "text": "Ходить по воде и разрабатывать программы, следуя ТЗ, очень просто… если они заморожены",
-      "author": "И. Берард"
+    {
+      "text": "Learning to program has no more to do with designing interactive software than learning to touch type has to do with writing poetry",
+      "author": "Ted Nelson"
     }
+    {
+        "text": "Computer system analysis is like child-rearing; you can do grievous damage, but you cannot ensure success",
+        "author": "Tom DeMarco"
+    }
+    {
+        "text": "I don't care if it works on your machine! We are not shipping your machine",
+        "author": "Vidiu Platon"
+    }
+    {
+        "text": "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code",
+        "author": "Christopher Thompson"
+    }
+    {
+        "text": "First learn computer science and all the theory. Next develop a programming style. Then forget all that and just hack",
+        "author": "George Carrette"
+    }
+    {
+        "text": "Most of you are familiar with the virtues of a programmer. There are three, of course: laziness, impatience, and hubris",
+        "author": "Larry Wall"
+    }
+    {
+        "text": "Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves",
+        "author": "Alan Kay"
+    }
+    {
+        "text": "The trouble with programmers is that you can never tell what a programmer is doing until it’s too late",
+        "author": "Seymour Cray"
+    }
+    {
+        "text": "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program",
+        "author": "Linus Torvalds"
+    }
+    {
+        "text": "",
+        "author": ""
+    }
+
   ]  

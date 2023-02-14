@@ -147,13 +147,23 @@ window.addEventListener('load', getLocalStorageCity)
 
 city.onchange = getWeather;
 
+let quote = document.querySelector('.quote');
+let author = document.querySelector('.author');
+
+let changeQuote = document.querySelector('.change-quote');
+
 async function getQuotes() {  
-    const quotes = 'json/data.json';
+    const quotes = 'https://raw.githubusercontent.com/VikaPetrusevich/stage1-tasks/momentum/json/data.json';
     const res = await fetch(quotes);
-    const data = await res.json(); 
-    console.log(data);
+    const data = await res.json();
+    const randomQuotesNumber =  Math.floor(Math.random() * (data.length-1));
+    quote.textContent = data[randomQuotesNumber].text;
+    author.textContent = data[randomQuotesNumber].author;
   }
+
   getQuotes();
+  changeQuote.onclick = getQuotes;
+  
 
 
 
