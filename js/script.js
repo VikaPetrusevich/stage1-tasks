@@ -124,6 +124,7 @@ async function getWeather() {
     const res = await fetch(url);
     const data = await res.json();
 
+    weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp}°C`;
     weatherDescription.textContent = data.weather[0].description;
@@ -145,6 +146,14 @@ window.addEventListener('beforeunload', setLocalStorageCity);
 window.addEventListener('load', getLocalStorageCity)
 
 city.onchange = getWeather;
+
+async function getQuotes() {  
+    const quotes = 'json/data.json';
+    const res = await fetch(quotes);
+    const data = await res.json(); 
+    console.log(data);
+  }
+  getQuotes();
 
 
 
