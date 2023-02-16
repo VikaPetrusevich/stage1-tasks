@@ -120,7 +120,7 @@ const weatherDescription = document.querySelector('.weather-description');
 let city = document.querySelector('.city');
 
 async function getWeather() {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=240be9b0502b67c96b61e4c928f68fec&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
 
@@ -152,18 +152,80 @@ let author = document.querySelector('.author');
 
 let changeQuote = document.querySelector('.change-quote');
 
-async function getQuotes() {  
+async function getQuotes() {
     const quotes = 'https://raw.githubusercontent.com/VikaPetrusevich/stage1-tasks/momentum/json/data.json';
     const res = await fetch(quotes);
     const data = await res.json();
-    const randomQuotesNumber =  Math.floor(Math.random() * (data.length-1));
+    const randomQuotesNumber = Math.floor(Math.random() * (data.length - 1));
     quote.textContent = data[randomQuotesNumber].text;
     author.textContent = data[randomQuotesNumber].author;
-  }
+}
 
-  getQuotes();
-  changeQuote.onclick = getQuotes;
-  
+getQuotes();
+changeQuote.onclick = getQuotes;
+
+const audio = new Audio();
+let play = document.querySelector('.play.player-icon');
+let isPlay = false;
+
+function playAudio() {    
+    if (!isPlay) {
+        audio.src = playList[playNum].src;
+        audio.currentTime = 0;
+        audio.play();
+        play.classList.add('pause');
+        isPlay = true;
+    }
+    else {
+        audio.pause();
+        play.classList.remove('pause');
+        isPlay = false;
+    }
+}
+
+play.onclick = playAudio;
+
+let playNum = 0;
+
+const playNext = document.querySelector('.play-next.player-icon');
+const playPrev = document.querySelector('.play-prev.player-icon');
+
+function getPlayNext() {
+    playNum++;
+    audio.src = playList[playNum].src;
+    audio.currentTime = 0;
+        audio.play();
+        play.classList.add('pause');
+        isPlay = true;
+}
+
+playNext.addEventListener('click', getPlayNext);
+
+function getPlayPrev() {
+    playNum--;
+    audio.src = playList[playNum].src;
+    audio.currentTime = 0;
+        audio.play();
+        play.classList.add('pause');
+        isPlay = true;
+}
+
+playPrev.addEventListener('click', getPlayPrev);
+
+import playList from './playList.js';
+console.log(playList);
+
+const ul = document.querySelector('.play-list');
+
+playList.forEach(el => {
+    const li = document.createElement('li');
+    li.classList.add('play-item');
+    li.textContent = el.title;
+    ul.append(li);
+});
+
+
+
 
 
 
