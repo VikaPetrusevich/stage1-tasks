@@ -212,7 +212,7 @@ function getPlayPrev() {
 
 playPrev.addEventListener('click', getPlayPrev);
 
-import playList from './playList.js';
+import playList from './playlist.js';
 console.log(playList);
 
 const ul = document.querySelector('.play-list');
