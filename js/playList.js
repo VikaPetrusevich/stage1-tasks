@@ -1,22 +1,22 @@
 const playList = [
     {
         title: 'Aqua Caelestis',
-        src: '../assets/sounds/Aqua Caelestis.mp3',
+        src: 'https://github.com/VikaPetrusevich/stage1-tasks/blob/momentum/assets/sounds/Aqua%20Caelestis.mp3?raw=true',
         duration: '00:58'
     },
     {
         title: 'River Flows In You',
-        src: '../assets/sounds/River Flows In You.mp3',
+        src: 'https://github.com/VikaPetrusevich/stage1-tasks/blob/momentum/assets/sounds/River%20Flows%20In%20You.mp3?raw=true',
         duration: '03:50'
     },
     {
         title: 'Summer Wind',
-        src: '../assets/sounds/Summer Wind.mp3',
+        src: 'https://github.com/VikaPetrusevich/stage1-tasks/blob/momentum/assets/sounds/Summer%20Wind.mp3?raw=true',
         duration: '01:50'
     },
     {
         title: 'Ennio Morricone',
-        src: '../assets/sounds/Ennio Morricone.mp3',
+        src: 'https://github.com/VikaPetrusevich/stage1-tasks/blob/momentum/assets/sounds/Ennio%20Morricone.mp3?raw=true',
         duration: '01:37'
     }
 
